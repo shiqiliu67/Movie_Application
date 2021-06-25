@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/row_adapter_image_view"
         android:text="Movie Title"
-        android:textSize="20dp"
+        android:textSize= "@dimen/my_text_size"
         android:textStyle="bold" />
 
     <TextView

@@ -4,6 +4,8 @@ import com.shiqiliu.movieapplication.data.respository.NowPlayingResponse
 import com.shiqiliu.movieapplication.data.respository.TrendingResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ApiService {
@@ -13,15 +15,16 @@ companion object{
     const val API_KEY = "198564c5fabf8c62626e1fefed61dad8"
 }
    // @GET("/trending/{media_type}/{time_window}")
+   // @Headers("api_key:$API_KEY")
     @GET("trending/all/day")
     suspend fun getTrendingMovie(
-       @Query("api_key") api_key :String = API_KEY
+     //  @Query("api_key") api_key :String = API_KEY ->also can use interceptor to replace the api parameter
    ): Response<TrendingResponse>
 
 
     @GET("movie/now_playing")
     suspend fun getPlayingMovie(
-        @Query("api_key") api_key :String = API_KEY
+    //    @Query("api_key") api_key :String = API_KEY
     ): Response<NowPlayingResponse>
 
 }
